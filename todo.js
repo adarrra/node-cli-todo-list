@@ -26,7 +26,7 @@ function help(){
 function listTasks() {
     db.all('select * from tasks', function (err, task) {
         task.forEach(function (tasks) {
-            console.log(tasks.id + ' ' + tasks.name + ": " + (tasks.status == 1 ? 'done' : ''));//синтаксис?
+            console.log(tasks.id + ' ' + tasks.name + ": " + (tasks.status == 1 ? 'done' : ''));
         });
         trigger('tasks_listed');
     });
